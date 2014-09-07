@@ -1,0 +1,29 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="large-12 columns" role="content">
+
+            <article>
+
+                <h3><a href="#">Social networks</a></h3>
+                <div>
+                    <ul class="button-group">
+                        <li><a href="login/facebook" class="button">Facebook</a></li>
+                        <li><a href="#" class="button">Google</a></li>
+                        <li><a href="#" class="button">Twiter</a></li>
+                        <li><a href="#" class="button">LinkedIn</a></li>
+                    </ul>
+                </div>
+
+            </article>
+            {% if user.is_authenticated %}
+                <a href="{% url "logout" %}" class="button">Logout</a>
+                Logeado
+            {% else %}
+                No logeado
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}

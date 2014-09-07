@@ -1,0 +1,4 @@
+.idea
+doctor/settings.py
+logfile*
+*.iml

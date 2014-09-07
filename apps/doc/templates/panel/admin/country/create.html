@@ -1,0 +1,13 @@
+{% extends 'panel/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form method="post" action="" >
+        {% csrf_token %}
+
+        {% crispy form %}
+
+        <input type="submit" class="button" value="Save"/>
+        <a href="{% url "country_list" %}" class="button alert">Cancel</a>
+    </form>
+{% endblock %}

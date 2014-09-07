@@ -1,0 +1,17 @@
+{% extends 'panel/base.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <div>
+        <h2>{% trans "Está seguro de eliminar este pais: " %} {{ object.name }} </h2>
+    </div>
+
+    <form method="post" action="" class="">
+        {% csrf_token %}
+        <input type="submit" class="button" value="Delete"/>
+        <a class="button alert" href="{% url "country_list" %}">{% trans 'Cancelar' %}</a>
+    </form>
+
+{% endblock %}

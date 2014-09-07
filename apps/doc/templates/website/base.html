@@ -1,0 +1,53 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Mi doctor</title>
+
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/foundation.min.css" />
+    {% block extra_style %}
+    {% endblock extra_style %}
+
+    {% block script_top %}
+    {% endblock script_top %}
+</head>
+<body>
+
+<nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+        <li class="name">
+            <h1><a href="#">MyDoctor</a></h1>
+        </li>
+        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    </ul>
+
+</nav>
+{% block content %}
+
+{% endblock content %}
+<footer class="row">
+    <div class="large-12 columns">
+        <hr/>
+        <div class="row">
+            <div class="large-6 columns">
+                <p>© Copyright no one at all. Go to town.</p>
+            </div>
+            <div class="large-6 columns">
+                <ul class="inline-list right">
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="{{ STATIC_URL }}js/foundation.min.js"></script>
+{% block script_bottom %}
+
+{% endblock script_bottom %}
+</body>
+
+</html>
