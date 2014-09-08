@@ -1,8 +1,11 @@
 from django.contrib.auth import get_user_model
-from django.contrib import auth
 
 
 def create_user(strategy, details, user=None, *args, **kwargs):
+    strategy.session_get('key')
+    if user:
+        return {'is_new': False}
+
     email = details.get('email', None)
     user_model = get_user_model()
     try:
@@ -13,3 +16,7 @@ def create_user(strategy, details, user=None, *args, **kwargs):
             email=email
         )
         user.save()
+    return {
+        'is_new': True,
+        'user': user
+    }

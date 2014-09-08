@@ -9,19 +9,21 @@
                 <h3><a href="#">Social networks</a></h3>
                 <div>
                     <ul class="button-group">
-                        <li><a href="login/facebook" class="button">Facebook</a></li>
+                        <li><a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="button">Facebook</a></li>
                         <li><a href="#" class="button">Google</a></li>
                         <li><a href="#" class="button">Twiter</a></li>
                         <li><a href="#" class="button">LinkedIn</a></li>
+
                     </ul>
                 </div>
-
             </article>
-            {% if user.is_authenticated %}
-                <a href="{% url "logout" %}" class="button">Logout</a>
-                Logeado
+
+            {% if user.is_authenticated and not user.is_superuser %}
+                <h3>Bienvenid@ {{ user.first_name }}!</h3> <a href="{% url "logout" %}" class="button">Logout</a>
             {% else %}
-                No logeado
+                <a href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" class="btn btn-primary">
+                    Identificarse con Facebook
+                </a>
             {% endif %}
         </div>
     </div>

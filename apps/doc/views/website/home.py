@@ -11,6 +11,17 @@ from django.contrib import auth
 class HomeTemplateView(TemplateView):
     template_name = 'website/home.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(HomeTemplateView, self).get_context_data(**kwargs)
+        return context
+
+
+class ProfileTemplateView(TemplateView):
+    template_name = 'website/profile.html'
+
+    def get_context_data(self, **kwargs):
+        return super(ProfileTemplateView, self).get_context_data(**kwargs)
+
 
 class LoginTemplateView(TemplateView):
     template_name = 'website/login.html'

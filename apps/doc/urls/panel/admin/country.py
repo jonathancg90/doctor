@@ -6,7 +6,6 @@ from apps.doc.views.panel.admin.Country import CountryListView, CountryCreateVie
 
 
 urlpatterns = patterns('',
-
                        #Country Urls
                        url(r'^list/$',
                            CountryListView.as_view(),

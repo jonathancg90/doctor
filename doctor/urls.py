@@ -10,7 +10,9 @@ urlpatterns = patterns('',
     url(r'^panel/', include('apps.doc.urls.panel')),
 
     #social
-    url('', include('social.apps.django_app.urls', namespace='social'))
+    url('', include('social.apps.django_app.urls', namespace='social')),
+
+    # url('', include('django.contrib.auth.urls', namespace='auth')),
 )
 
 urlpatterns += staticfiles_urlpatterns()
